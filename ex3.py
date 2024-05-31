@@ -1,7 +1,5 @@
 import tkinter as tk 
 from random import choice
-from time import sleep
-from threading import Thread
 
 fenetre = tk.Tk()
 fenetre.title("Pierre, Feuille, Ciseaux !")
@@ -41,7 +39,6 @@ attendre.pack()
 
 def reset():
     attendre.configure(text="Une nouvelle partie va commencer", font=("Arial", 14))
-    sleep(2)
     for child in fchoixOrdi.winfo_children():
         child.configure(state=tk.NORMAL)
 
@@ -70,7 +67,7 @@ def choixJoueur(choix):
 
     print(resultat)
 
-    Thread(target=reset, args=()).start()
+    fenetre.after(2000, reset)
 
 
 fenetre.mainloop()

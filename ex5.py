@@ -11,7 +11,6 @@ def get_time():
     current_time = datetime.datetime.now().time()
     formatted_time = current_time.strftime("%H:%M:%S")
     ft = [int(i) for i in formatted_time.split(':')][0:2]
-    # print(ft)
     return ft
 
 def init_fen():
