@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import ttk
 import datetime
 
 fen = tk.Tk()
@@ -10,9 +9,8 @@ color = "#123456"
 
 def get_time():
     current_time = datetime.datetime.now().time()
-    formatted_time = current_time.strftime("%H:%M:%S")
-    ft = [int(i) for i in formatted_time.split(':')][0:2]
-    return ft
+    formatted_time = current_time.strftime("%H:%M")
+    return [int(i) for i in formatted_time.split(':')]
 
 def timeFrames():
     time = get_time()
@@ -27,8 +25,6 @@ def timeFrames():
     for i in range(time[1]%5):
         canvas.create_rectangle(i*200/4, 75, (i+1)*200/4, 100, fill=color, outline="gray")
     
-
-
 def init_fen():
     global h5, h1, m5, m1, frame2, bigframe, Lh5, Lh1, Lm5, Lm1, Ltime, canvas
     bigframe = tk.Frame(fen)
@@ -38,15 +34,11 @@ def init_fen():
     frame2 = tk.Frame(bigframe)
     frame2.grid(row=0, column=1)
 
-    Lh5 = tk.Label(frame2, text="Cinq heures")
-    Lh5.pack()
-    Lh1 = tk.Label(frame2, text="Une heure")
-    Lh1.pack()
-    Lm5 = tk.Label(frame2, text="Cinq minutes")
-    Lm5.pack()
-    Lm1 = tk.Label(frame2, text="Une minute")
-    Lm1.pack()
-    
+    Lh5 = tk.Label(frame2, text="Cinq heures" ), Lh5.pack()
+    Lh1 = tk.Label(frame2, text="Une heure" ), Lh1.pack()
+    Lm5 = tk.Label(frame2, text="Cinq minutes" ), Lm5.pack()
+    Lm1 = tk.Label(frame2, text="Une minute" ), Lm1.pack()
+
     Ltime = tk.Label(fen, text="Il est actuellement :")
     Ltime.pack()
 
