@@ -68,5 +68,4 @@ if __name__ == "__main__":
     update_time()
     fen.after(10000, update_time)
 
-        
     fen.mainloop()
