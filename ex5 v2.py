@@ -34,10 +34,14 @@ def init_fen():
     frame2 = tk.Frame(bigframe)
     frame2.grid(row=0, column=1)
 
-    Lh5 = tk.Label(frame2, text="Cinq heures" ), Lh5.pack()
-    Lh1 = tk.Label(frame2, text="Une heure" ), Lh1.pack()
-    Lm5 = tk.Label(frame2, text="Cinq minutes" ), Lm5.pack()
-    Lm1 = tk.Label(frame2, text="Une minute" ), Lm1.pack()
+    Lh5 = tk.Label(frame2, text="Cinq heures" )
+    Lh5.pack()
+    Lh1 = tk.Label(frame2, text="Une heure" )
+    Lh1.pack()
+    Lm5 = tk.Label(frame2, text="Cinq minutes" )
+    Lm5.pack()
+    Lm1 = tk.Label(frame2, text="Une minute" )
+    Lm1.pack()
 
     Ltime = tk.Label(fen, text="Il est actuellement :")
     Ltime.pack()
